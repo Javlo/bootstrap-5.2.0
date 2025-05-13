@@ -1,0 +1,238 @@
+@import 'variables.scss';
+.wall {
+	#add-post-form {
+		.btn-primary {
+			margin-top: 1rem;
+		}
+	}
+	.card-body .btn {
+		align-self: auto;
+	}
+	.time {
+		font-size: 0.7em;
+	}
+	.btn-delete {
+		margin-left: 3px;
+		float: right;
+	}
+	.input-admin {
+		background-color: rgba(#f8d7da, 0.5);
+	}
+	.action-block {
+		text-align: right;
+		clear: both;
+	}
+
+	.need-validation {
+		color: $red;
+		font-size: 1.4em;
+		margin-right: 15px;
+	}
+
+	.filter {
+		.row {
+			margin-bottom: 15px;
+			.form-group {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.alert-wall {
+		margin-top: 15px;
+	}
+
+	.valided.unvalid {
+		.btn-refuse {
+			color: $red;
+		}
+		.btn-valid {
+			opacity: 0.3;
+		}
+		.btn-valid:hover {
+			opacity: 1;
+		}
+	}
+	.card {
+		margin-bottom: 15px;
+		.card-header {
+			border-bottom: 0 none;
+		}
+	}
+	.post-list .card {
+		margin-bottom: 3px;
+		transition: margin-bottom 1s ease-in-out, box-shadow 1s ease-in-out;
+	}
+	.warning {
+		color: $red;
+	}
+	textarea {
+		height: 80px;
+	}
+
+	.admin-msg {
+		label {
+			display: inline-block;
+		}
+		label:after {
+			content: " : ";
+		}
+		p, label {
+			display: inline-block;
+			font-size: 0.8em;
+			color: $red;
+			margin: 0;
+		}
+		p {
+			margin: 3px 0 0 5px;
+		}
+	}
+
+	.admin-block {
+		margin-left: 3px;
+		float: right;
+		clear: both;
+		a {
+			font-size: 1.4em;
+			margin-left: 15px;
+		}
+	}
+
+	.author {
+		font-weight: bold;
+	}
+
+	.btn-bottom {
+		margin-top: -20px;
+		margin-left: auto;
+		margin-right: auto;
+		display: inline-block;
+		border-radius: 0 0 1.25rem 1.25rem;
+		font-size: 0.8em;
+		float: right;
+		opacity: 0.5;
+	}
+
+	.btn-top {
+		margin-bottom: -20px;
+		margin-left: auto;
+		margin-right: auto;
+		display: inline-block;
+		border-radius: 1.25rem 1.25rem 0 0;
+		font-size: 0.8em;
+		float: right;
+		opacity: 0.5;
+	}
+
+	.valided.valid {
+		.btn-valid {
+			color: $green;
+		}
+		.btn-refuse {
+			opacity: 0.3;
+		}
+		.btn-refuse:hover {
+			opacity: 1;
+		}
+	}
+	
+	.reply-zone {
+		margin-top: 15px;
+		padding-top: 15px;
+		border-top: 1px solid rgba(0, 0, 0, 0.125);
+	}
+	.reply-list{
+		.reply-source {
+			max-width: 100%;
+			max-height: 18px;
+			margin-bottom: 3px;
+			overflow: hidden;
+			font-size: 0.8em;
+			color: #999999;
+			transition: max-height 2s ease-out;
+		}
+		.reply-source:hover {
+			max-height: 640px;
+			transition: max-height 2s ease-out;
+		}
+		.btn-reply {
+			display: block;
+			margin-bottom: 1px;
+			text-align: right;
+			color: #cccccc;
+			clear: both;
+		}
+		.list-group-item:hover .btn-reply {
+			color: #428bcb;
+		}
+		.reply {
+			margin-top: 3px;
+		}
+		.list-group-item {
+			padding-right: 0;
+		}
+		span.author, span.date {
+			display: inline-block;
+			font-style: italic;
+			float: none;
+		}
+		span.author:after {
+			padding-left: 3px;
+			content: "-";
+			padding-right: 3px;
+		}
+		.text {
+			padding: 0;
+			margin: 0 0 0 15px;
+		}
+	}
+
+	.reply-loader {
+		padding: 0 50px;
+		text-align: center;
+	}
+
+	.post-list {
+		.card {
+			.card-header {
+				background-color: #e2e3e5;
+				 .user-zone {
+					display: flex;
+					justify-content: space-between;
+					.header-bloc {
+						min-width: 40%;
+					}
+				}
+			}
+		}
+		.reply-loader {
+			display: none;
+		}
+		.card-loading {
+			.reply-loader {
+				display: block;
+			}
+		}
+		.card.card-close {
+			.card-body {
+				display: none;
+			}
+			box-shadow: 0 0 0 rgba($black, .350);
+			transition: box-shadow 1s ease-in-out;
+		}
+		.card.card-open {
+			box-shadow: $box-shadow-lg;
+			transition: margin-bottom 1s ease-in-out, box-shadow 1s ease-in-out;
+			margin-bottom: 30px;
+		}
+		.card.mine {
+			.card-header {
+				background-color: #d4edda;
+			}
+		}
+	}
+
+	.card-header {
+		padding: 0.25rem 0.5rem;
+	}
+}

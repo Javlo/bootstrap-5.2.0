@@ -1,0 +1,39 @@
+@include media-breakpoint-down(md) {
+	#main-nav #mainNavBar {
+		background-color: #ffffff;
+		border-radius: 3px;
+		position: absolute;
+		width: 100%;
+		top: 35px;
+		left: 0;
+		margin-top: 1em;
+		padding-top: 1em;
+		box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+		.nav-link {
+			padding-left: 1em;
+			padding-right: 1em;
+			color: #000000;
+		}
+		.navbar {
+			display: block;
+			height: auto;
+		}
+		ul.justify-content-end {
+			justify-content: normal !important;
+		}
+		ul.navbar-nav {
+			width: 100%;
+			display: block;
+			li {
+				width: 100%;
+				a {
+					border-bottom: 1px #dedede solid;
+					margin-top: -1px;
+				}
+			}
+			li.last a {
+				border: 0 none;
+			}
+		}
+	}
+}

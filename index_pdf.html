@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- BOOTSTRAP 5 - PDF - 2022 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<style type="text/css">
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+    font-family: ${pdfLayout.fontFamily};
+}
+
+.hide-pdf {
+    display: none !important;
+}
+
+@page {
+    margin: 0;
+    size: ${pdfLayout.pageSize};
+    @top-center {
+		content: '${info.globalTitle}';
+		font-family: ${pdfLayout.fontFamily};		
+	}
+    @bottom-center {
+         content: counter(page) "/" counter(pages);
+         font-family: ${pdfLayout.fontFamily};
+         font-size: 0.9em;
+    }
+}
+.global-image.full, .global-image.banner {
+    width: 100%;
+    display: block;   
+    margin: 0;
+    float: none; 
+}
+.global-image.full .image-right, .global-image.full .image-left, .global-image.banner .image-right, .global-image.banner .image-left {
+    float: none;
+    margin: 0;
+}
+<c:if test="${not empty pdfLayout.backgroundImage}">
+body {
+    background-image: url('${pdfLayout.backgroundImage}');
+    background-repeat: no-repeat;
+    background-size: ${pdfLayout.backgroundSize};
+   }
+</c:if>
+}
+<jsp:include page="css/pdf.css" />
+<jsp:include page="css/pdf-integration.css" />
+</style>
+</head>
+<body class="pdf ${pageClass} responsive-${info.template.style.responsive}" style="-webkit-font-smoothing: antialiased; width: 100% !important; -webkit-text-size-adjust: none;${outerBackgroundColor};" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<center>
+<div style="width: ${pdfLayout.width}; min-height: ${pdfLayout.height};">
+    <div style="padding-top: ${pdfLayout.marginTop}; padding-bottom: ${pdfLayout.marginBottom}; padding-left: ${pdfLayout.marginLeft}; padding-right: ${pdfLayout.marginRight};">
+        <div style="color: #000000; padding: 0; margin: 0;" id="header">[header]</div>
+        <div style="padding: 15px;" id="content" align="left">[content]</div>
+        <div id="footer" style="text-align: center; margin: 0; background-color: #ffffff; padding: 0; vertical-align: top;" align="center">[footer]</div>
+    </div>
+</div>
+</center>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+body {
+    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Courier, monospace, serif, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.carousel-caption {
+	font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6,.h1, .h2, .h3, .h4, .h5, .h6, .navbar-brand, .nav-link, .lang-bloc option {
+	color: #000001;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.text-white {
+	h1, h2, h3, h4, h5, h6,.h1, .h2, .h3, .h4, .h5, .h6, .navbar-brand {
+		color: #ffffff;
+	}
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+h4 {
+	font-size: 1.4em;
+}
+
+h5 {
+	font-size: 1.2em;
+}
+
+h6 {
+	font-size: 1.1em;
+}
+
+form .message {
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+a .collapse-title {
+	text-decoration: none;
+}

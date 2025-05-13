@@ -1,0 +1,30 @@
+@include media-breakpoint-down(xl) {	
+	h1:before {
+		content: "[xl] ";
+	}
+}
+
+@include media-breakpoint-down(lg) {	
+	h1:before {
+		content: "[lg] ";
+	}
+}
+
+
+@include media-breakpoint-down(md) {	
+	h1:before {
+		content: "[md] ";
+	}
+}
+
+@include media-breakpoint-down(sm) {	
+	h1:before {
+		content: "[sm] ";
+	}
+}
+
+@include media-breakpoint-down(xs) {	
+	h1:before {
+		content: "[xs] ";
+	}
+}

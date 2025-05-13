@@ -1,0 +1,12 @@
+@media screen and (min-aspect-ratio: 16/8) { 
+	section.full {
+    	height: auto;    	
+	}
+	section.home {
+		padding-bottom: 0;
+		.image-right.text-card, .image-left.text-card {
+    		position: relative;    	
+    		height: auto;    
+    	}	
+	}	
+ }

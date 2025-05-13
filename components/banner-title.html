@@ -1,0 +1,15 @@
+<div class="parent-banner-title">
+  <div class="bg-child">
+    <div class="title-child">${field.h1.title.html}
+    <p>${field.text.tagline.value}</p>
+   </div>
+  </div>
+</div>
+<c:if test="${not empty field.image.image.previewURL}">
+<style>
+  .parent-banner-title .bg-child {
+    <jv:changeFilter var="newUrl" url="${field.image.image.previewURL}" filter="standard" newFilter="banner" />
+    background-image: url('${newUrl}');
+  }  
+</style>
+</c:if>

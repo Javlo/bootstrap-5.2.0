@@ -1,0 +1,22 @@
+.webmap {
+	ul, li {
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	> ul > li {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	ul li li {
+		text-transform: none;
+		font-weight: normal;
+	}
+	ul ul {
+		margin-bottom: 15px;
+	}
+}
+footer .webmap li span {
+	display: none;
+}

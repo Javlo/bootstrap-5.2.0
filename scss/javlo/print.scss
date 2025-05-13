@@ -1,0 +1,40 @@
+@page { margin: 5% }
+	
+body {	
+  width: auto!important;
+  margin: auto!important;  
+  font-size: 10pt;
+  background-color: #fff!important;
+  color: #000!important;
+}
+	
+.breadcrumb, nav, #preview_command, #preview_command .header, #preview_command .sidebar, #sidebar, .main-nav, .search {
+	display: none;
+}
+
+html.edit-preview {
+	margin-top: 0 !important;
+	margin-left: 0 !important;
+}
+
+p, blockquote {
+  orphans: 3;
+  widows: 3;
+}
+
+.card {	
+    /*page-break-before: auto;*/
+    page-break-after: auto;
+    /*page-break-inside: avoid;*/
+}
+
+.dynamic-component-basket {	
+	 .col-12, .col-sm-6, .col-lg-4 {
+	 	max-width: 50%;
+	 	
+	 }
+}
+
+.hidden-print {
+	display: none;
+}

@@ -1,0 +1,40 @@
+.fc-toolbar {
+	font-size: 0.8em;
+	.fc-button {
+		padding: .2em .3em;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	body {
+		.fc-right .fc-button-group {
+			display: block;
+			.fc-button {
+				width: 100%;
+				display: block;
+				border-radius: 3.6px;
+				margin-bottom: 3px;
+			}
+		}
+		.fc-left, .fc-button-group {
+			display: block;
+			.fc-today-button {
+				margin: 3px 0 0 0;
+			}
+		}
+	}
+}
+
+.fc-event-container {
+	a {
+		cursor: pointer;
+		color: #eeeeee !important;
+		border: 0 none;
+		padding: 1px 2px;
+	}
+	a:hover {
+		border-color: $primary !important;
+		background-color: $primary !important;
+		color: #ffffff !important;
+	}
+}

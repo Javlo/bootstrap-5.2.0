@@ -1,0 +1,22 @@
+***************************
+** Javlo BOOTSTRAP 4 Doc **
+***************************
+
+
+MENU RENDERER
+=============
+
+params:
+
+	* _menufix : top fixed menu
+	* _menularge : all viewport with
+	* _menujssearch : add form for ajax search
+	* _menusearch : add form for back-end search
+	* _menudropdown : sub menu
+	* intranet : add user info
+	* _menucontainer : menu container class
+
+SASS Method
+===========
+
+set-text-color($color) : reverse color if $color black else return white

@@ -1,0 +1,45 @@
+@import 'variables.scss';
+
+.children-link.tree {
+	.tree-view {
+		ul {
+			margin-left: $basic-bloc-separation;
+			li {
+				float: none;
+				width: auto;
+				position: relative;
+				padding-left: 30px;
+				.icon {
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: inline-block;
+				}
+				.description {
+					margin-left: 5px;
+					padding: 5px;
+					background-color: rgba(255,255,255,0.4);
+					color: #000000;
+					border-radius: 3px;
+					display: inline-block;
+				}
+			}
+			li.block-open {					
+				> .tree-command .open-command {
+					display: none;
+				}
+				> ul, .info-wrapper {
+					display: block;
+				}
+			}
+			li.block-close {					
+				> .tree-command  .close-command {
+					display: none;
+				}
+				> ul, .info-wrapper {
+					display: none;
+				}
+			}
+		}
+	}
+}

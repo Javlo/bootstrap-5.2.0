@@ -1,0 +1,9 @@
+<div class="localisation-bloc">
+<address>
+	<div><strong>${field.text.title.XHTMLValue}</strong></div>
+	${field.large-text.address.XHTMLValue}
+</address>
+<c:if test="${not empty phone.value}"><div class="phone"><i class="fas fa-phone" aria-hidden="true"></i> : <a href="tel:${field.text.phone.XHTMLValue}">${field.text.phone.XHTMLValue}</a></div></c:if>
+<c:if test="${not empty fax.value}"><div class="fax"><i class="fas fa-fax" aria-hidden="true"></i> : ${field.text.fax.XHTMLValue}</div></c:if>
+<c:if test="${not empty email.value}"><div class="email"><i class="fas fa-at" aria-hidden="true"></i> : ${field.text.email.XHTMLValue}</div></c:if>
+</div>

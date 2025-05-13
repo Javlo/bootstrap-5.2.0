@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="${info.language}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>${info.pageTitle}<c:if test="${info.pageTitle != info.globalTitle}"> - ${info.globalTitle}</c:if></title>
+<link href="scss/bootstrap_header.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<c:if test="${info.page.seoWeight == 0}">
+	<meta name="robots" content="noindex, nofollow" />
+</c:if>
+<c:if test="${info.page.seoWeight != 0}">
+	<meta name="robots" content="index, follow, noodp, noydir, notranslate, noarchive" />
+</c:if>
+<link rel="canonical" href="${info.currentCanonicalURL}" />
+<meta property="og:site_name" content="${info.globalTitle}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="${info.pageTitle}" />
+<meta property="og:url" content="${info.currentAbsoluteURL}" />
+<c:if test="${empty info.page.info.description}">
+	<meta property="og:description" content="${i18n.view['default.description']}" />
+</c:if>
+<c:if test="${not empty info.page.info.description}">
+	<meta property="og:description" content="${info.pageDescription}" />
+</c:if>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="${info.pageTitle}" />
+<meta name="twitter:site" content="${info.globalTitle}" />
+<meta name="twitter:creator" content="${info.globalTitle}" />
+<c:if test="${empty info.page.info.description}">
+	<meta name="twitter:description" content="${i18n.view['default.description']}" />
+</c:if>
+<c:if test="${not empty info.page.info.description}">
+	<meta name="twitter:description" content="${info.pageDescription}" />
+</c:if>
+<c:if test="${not empty info.facebookImageUrl}">
+   	<meta itemprop="image" content="${info.facebookImageUrl}" />
+	<meta property="og:image" content="${info.facebookImageUrl}" />        
+	<meta name="twitter:image" content="${info.facebookImageUrl}" />
+</c:if>
+<jsp:include page="meta.html" /><jsp:include page="meta.jsp" />
+<style type="text/css">
+@page { @top-center { content:'${info.globalTitle}';
+	
+}
+
+@bottom-center {
+	content: counter(page) "/" counter(pages);
+}
+}
+
+<c:if test="${info.template.colorPalette}">	
+<c:forEach var="col" items="${info.template.colorsMap}" varStatus="status">
+	.bg-template-${status.index+1} {
+		background-color: ${info.template.colorsMap[status.index]};
+	}    	
+  	</c:forEach>
+<c:set var="color" value="${info.template.colorsMap[status.index]}" />
+<c:set var="style" value='style="background-color: ${color.alphaHTMLCode}; color: ${color.text};"' />					
+</c:if>
+
+</style>
+<jsp:include page="lib/include_lib.jsp" />
+</head>
+<c:set var="bodyAreas" value="" />
+<c:forEach var='area' items='${info.area}'><c:set var="bodyAreas" value=" ${bodyAreas} area-${area}" /> </c:forEach>
+<body class="section-${info.section} section-${info.sectionNumber} page-${info.pageName} ${bodyAreas}" id="top">
+<c:if test="${not empty cookiesService && cookiesService.displayMessage}"><jsp:include page="cookies.jsp" /></c:if>
+	<jsp:include page="jsp/menu.jsp" />		
+	<c:if test="${info.template.config.bannerBottom}"><jsp:include page="banner.jsp" /></c:if>
+	<!-- Page Content -->
+	<div class="container main-container">		
+		<div class="row" id="banner-container">
+			<div class="col-md-12">
+				<div id="banner">[banner]</div>
+			</div>
+		</div>
+		<div class="row" id="header-container">
+			<div class="col-md-12">
+				<div id="header">[header]</div>
+			</div>
+		</div>
+		<c:if test="${messages.globalMessage.needDisplay}">
+	 	<div class="container">
+			<div class="alert alert-${messages.globalMessage.bootstrapType}" role="alert">			
+				<span>${messages.globalMessage.messageDisplay}</span>
+			</div>
+		</div>
+		</c:if>				
+		<div class="row">
+			<c:if test="${editPreview}">
+				<c:if test="${info.areas['sidebar']}">
+				<div class="sidebar col-md-3">
+					<div id="sidebar">[sidebar]</div>
+				</div>
+				</c:if>
+				<div class="col-md-${info.areas['contextzone']?info.areas['sidebar']?'6':'9':info.areas['sidebar']?'9':'12'}">
+					<div id="content">[content]</div>
+				</div>
+				<c:if test="${info.areas['contextzone']}">
+					<div class="col-md-3 sidebar">
+						<div id="contextzone">[contextzone]</div>
+					</div>
+				</c:if>
+			</c:if>
+			<c:if test="${!editPreview}">
+				<c:set var="contextzone" value="${info.areas['contextzone'] && !info.areaEmpty.contextzone}" />
+				<c:set var="sizebarzone" value="${info.areas['sidebar'] && !info.areaEmpty.sidebar}" />
+				<c:if test="${sizebarzone}">
+					<div class="sidebar col-md-3">
+						<div id="sidebar">[sidebar]</div>
+					</div>
+				</c:if>
+				<div class="col-md-${sizebarzone?contextzone?'6':'9':contextzone?'9':'12'}">
+					<div id="content">[content]</div>
+				</div>
+				<c:if test="${contextzone}">
+					<div class="col-md-3 sidebar">
+						<div id="contextzone">[contextzone]</div>
+					</div>
+				</c:if>
+			</c:if>
+		</div>
+		<!-- /.row -->
+
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<div id="footer">
+						<p>Copyright &copy; Your Website 2018</p>
+					</div>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+		</footer>
+
+	</div>
+	
+	<!-- /.container -->
+	<div id="backtotop">
+		<a title="${i18n.view['global.back-to-top']}" onclick="scrollTo('#top'); return false;" href="#top" class="btn btn-default btn-lg btn-primary"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script crossorigin="anonymous" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	
+	<link href="scss/bootstrap_footer.css" rel="stylesheet" />
+	<script src="lib/popper.min.js"></script>
+	<script src="lib/chosen/chosen.jquery.min.js"></script>
+	<script src="js/javlo.js"></script>
+
+	<script src="lib/treeview.js"></script>
+	<!-- Photoswipe -->
+	<jsp:include page="lib/photoswipe/html.jsp" />	
+	<script src="lib/photoswipe/js/photoswipe.min.js"></script> 
+	<script src="lib/photoswipe/js/photoswipe-ui-default.min.js"></script>
+	<script src="lib/photoswipe/js/init.js"></script>		
+	<script type="text/javascript">
+		jQuery('#backtotop').hide();		
+		$(window).on('load', function(){
+			initPhotoSwipeFromDOM('.clickable-multimedia a');
+		});
+		$(window).scroll(function() {
+			if (jQuery(this).scrollTop() > 25) {
+				$('#backtotop').show(300);
+			} else {
+				$('#backtotop').hide(300);
+			}
+		});
+	</script>		
+</body>
+
+</html>
+

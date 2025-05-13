@@ -1,0 +1,115 @@
+ 	$section-spacer: 1rem !default;
+
+	.section-links {
+		nav {
+			background-color: #999999;
+			display: flex;
+			justify-content: center;
+			a {
+				color: #ffffff;
+				padding: 1rem 2rem;
+			}
+		}
+	}
+
+	.section-body {
+		position: relative;
+		padding: 2*$section-spacer;
+		overflow: hidden;
+		.section-content {
+			@extend .container;
+			margin: 0 auto;
+		}
+		.global-image.standard {
+			margin: (-2*$section-spacer);
+			.image-right {
+				margin: 0 0 0 3*$section-spacer;
+			}
+			.image-left {
+				margin: 0 3*$section-spacer 0 0;
+			}
+		}
+	}
+
+	.parallax {
+		.section-body {
+			background-color: transparent;
+		}
+	}
+
+	.layout-parallax-dark {
+		.img-parallax {
+			@include filter(brightness, 25%);
+		}
+	}
+
+	.layout-parallax-light {
+		.img-parallax {
+			@include filter(brightness, 175%);
+		}
+		.section-body {
+			color: #000000;
+			h1, h2, h3, h4, h5, h6 {
+				color: #000000;
+			}
+		}
+	}
+
+	.section-fill {
+		.section-body {
+			height:100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			.img-parallax {
+				width: 200%;
+				min-width: 1920px;
+			}
+		}
+	}
+
+	.section-small {
+		.section-body {
+			padding-top: $section-spacer;
+			padding-bottom: $section-spacer;
+		}
+	}
+
+	.section-large {
+		.section-body {
+			padding-top: 6*$section-spacer;
+			padding-bottom: 6*$section-spacer;
+		}
+	}
+
+
+	.color-primary {
+		.section-body {
+			background-color: #fffffe;
+			color: #000000;
+			h1, h2, h3, h4, h5, h6 {
+				color: #000001;
+			}
+		}
+	}
+
+	.color-secondary {
+		.section-body {
+			background-color: #f0f1f0;
+			color: #000000;
+			h1, h2, h3, h4, h5, h6 {
+				color: #000001;
+			}
+		}
+	}
+
+	.section-dark {
+		.section-body {
+			background-color: #000000;
+			color: #ffffff;
+			h1, h2, h3, h4, h5, h6 {
+				color: #ffffff;
+			}
+		}
+	}

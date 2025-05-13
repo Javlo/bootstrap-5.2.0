@@ -1,0 +1,50 @@
+@import 'variables.scss';
+
+.page-reference {
+	margin-bottom: $basic-bloc-separation;
+ }
+
+ ._area {
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ }
+
+.h100 {
+	display: flex;
+	flex-basis: auto;
+	align-items: stretch;
+}
+
+#user {
+	img {
+		max-height: 100px;
+	}
+	.global-image {
+		margin: 0;
+	}
+}
+
+body.body-background {
+	#main-nav .navbar, #main-nav .container, .dropdown-menu {
+		background-color: transparent;
+	}
+}
+
+#content-large {	
+	background-color: #cdcccc;
+}
+
+.menu-fixed-top .heading-anchor {
+	font-size: 0;
+	line-height: 0;
+	margin-top: -60px;
+    display: inline-block;
+    position: absolute;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.col-sm-4 {
+		float: left;
+		width: 33.33%;
+	}
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Javlo Template bootstrap-5.2 -->
+<html lang="${info.languageAndCountry}" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="unsafe-url">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>${info.pageTitle}<c:if test="${info.pageTitle != info.globalTitle}"> - ${info.globalTitle}</c:if></title>
+<style>body {background-color: #fffeff;}</style>
+<link href="scss/bootstrap.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!--[if IE]>
+<link href="scss/javlo/ie.css" rel="stylesheet" />
+<![endif]-->
+<c:if test="${info.page.seoWeight == 0}">
+	<meta name="robots" content="noindex, nofollow" />
+</c:if>
+<c:if test="${info.page.seoWeight != 0}">
+	<meta name="robots" content="index, follow, noodp, noydir, notranslate, noarchive" />
+</c:if>
+<link rel="canonical" href="${info.currentCanonicalURL}" />
+<jsp:include page="social_meta.jsp" />
+<jsp:include page="meta.html" /><jsp:include page="meta.jsp" />
+<style type="text/css">
+@page { @top-center { content:'${info.globalTitle}';
+
+}
+
+@bottom-center {
+	content: counter(page) "/" counter(pages);
+}
+
+<c:if test="${info.template.colorPalette}">
+<c:forEach var="col" items="${info.template.colorsMap}" varStatus="status">
+	.bg-template-${status.index+1} {
+		background-color: ${info.template.colorsMap[status.index]};
+	}
+  	</c:forEach>
+<c:set var="color" value="${info.template.colorsMap[status.index]}" />
+<c:set var="style" value='style="background-color: ${color.alphaHTMLCode}; color: ${color.text};"' />
+</c:if>
+
+</style>
+<jsp:include page="lib/include_lib.jsp" />
+
+</head>
+<c:set var="bodyAreas" value="" />
+<c:forEach var='area' items='${info.area}'><c:set var="bodyAreas" value=" ${bodyAreas} area-${area}" /> </c:forEach>
+<c:set var="bodyStyle" value="" />
+<c:set var="bodyClass" value="" />
+<c:if test="${not empty info.imageBackground}">
+<c:set var="bodyStyle" value="background-image: url('${info.imageBackground.previewURL}');" />
+<c:set var="bodyClass" value="body-background" />
+</c:if>
+<c:set var="taxoClass" value="" /><c:forEach var="taxo" items="${info.page.taxonomyBean}"><c:set var="taxoClass" value="${taxoClass} taxo-${taxo.name}" /></c:forEach>
+<body class="${bodyClass} menu-${param._menufix?'fixed-top':'not-fixed'} banner-${empty info.areaEmpty['banner']} section-${info.section} section-${info.sectionNumber} page-${info.pageName} ${bodyAreas} ${not empty info.logoRawUrl?'logo-img':'logo-text'} depth-${info.page.depth}${taxoClass}" id="top" style="${bodyStyle}">
+<c:if test="${not empty cookiesService && cookiesService.displayMessage}"><jsp:include page="cookies.jsp" /></c:if>
+	<div class="${param._menularge?'container-fluid':'container'} nav-container">
+		<div class="row">
+			<div class="col">
+				<jsp:include page="jsp/menu.jsp" />
+			</div>
+			<c:if test="${not empty info.userName}">
+			<div class="col-sm-2 d-flex justify-content-center align-items-center" id="user-container">
+			<div id="user"></div>
+			</div>
+			</c:if>
+		</div>
+	</div>
+	<div class="main-container">
+	<c:if test="${info.template.config.bannerBottom}"><jsp:include page="banner.jsp" /></c:if>
+	<!-- Page Content -->
+	<div class="banner-container">
+		<div class="content-container">
+			<div id="banner-container">
+				<div id="banner">[banner]</div>
+			</div>
+	</div></div><div class="header-container">
+		<div class="container content-container" id="header-container">
+			<div id="header">[header]</div>
+		</div>
+	</div><div class="container content-container">
+
+		<c:if test="${messages.globalMessage.needDisplay}">
+	 	<div class="pt-3 pb-1">
+			<div class="alert alert-${messages.globalMessage.bootstrapType}" role="alert">
+				<span>${messages.globalMessage.messageDisplay}</span>
+			</div>
+		</div>
+		</c:if>
+
+		<div class="row">
+				<div id="sidebar-container" class="sidebar col-md-3">
+					<div id="sidebar">[sidebar]</div>
+				</div>
+				<div class="col-md">
+					<div id="content">[content]</div>
+				</div>
+				<div id="contextzone-container" class="sidebar col-md-3">
+					<div id="contextzone">[contextzone]</div>
+				</div>
+		</div>
+	</div>
+
+	<div id="content-large-container">
+		<div id="content-large" class="content-large-wrapper">[content-large]</div>
+	</div>
+	<div id="content-small-container">
+		<div id="content-small" class="content-large-wrapper container">[content-small]</div>
+	</div>
+
+	</div><div class="footer-container">
+		<footer class="container">
+			<div id="footer">
+				<p>Copyright &copy; ${info.globalTitle} ${info.year}</p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/javlo.min.js?bld=##BUILD_ID##"></script>
+	<jsp:include page="lib/photoswipe/html.jsp" />
+	<script src="main_lib/_all_rec.js"></script>
+	<jsp:include page="end_body.jsp" />
+
+	<div id="backtotop">
+		<a title="${i18n.view['global.back-to-top']}" onclick="scrollTo('#top'); return false;" href="#top" class="btn btn-default btn-lg btn-primary"><i class="bi bi-arrow-up"></i></a>
+	</div>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(event) {
+			document.getElementById('backtotop').style.display="none";
+			//initPhotoSwipeFromDOM('.clickable-multimedia a');
+			window.addEventListener('scroll', function(e) {
+				if (this.scrollTop > 25) {
+					document.getElementById('backtotop').style.display="block";
+				} else {
+					document.getElementById('backtotop').style.display="none";
+				}
+			});
+		});
+	</script>
+	<div class="microdata hidden">
+		<jsp:include page="jsp/microdata/breadcrumb.jsp" />
+	</div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" />
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,143 @@
+.messagelist {
+	border: 1px solid #ccc;
+	.body, .text {
+	    padding: 4px 8px;
+    	line-height: 1.3;
+    	background-color: #f4f4f4;
+    	color: #424242;
+    	border-radius: 3px;
+    }
+    .im-form {
+    	padding: 3px;
+    }
+    .btn {
+    	border: 0 none;
+    }
+    a {
+    	text-decoration: underline;
+    }
+
+    h4, h3 {
+	    margin-top: 0;
+		font-size: 11px;
+		color: #333;
+		font-weight: normal;
+		padding: 8px 10px;
+		border-bottom: 1px solid #ccc;
+		text-transform: uppercase;
+	}
+
+	.link {
+		padding: 8px 10px;
+		background: #eee;
+		font-size: 11px;
+		border-top: 1px solid #ccc;
+	}
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+		li {
+			display: block;
+			border-bottom: 1px dotted #ccc;
+			padding: 5px 10px;
+		}
+		li:last-child {
+			border-bottom: 0;
+		}
+		li.current {
+			background: #fff;
+			color: #333;
+		}
+		li.current a {
+			color: #6385ae;
+			font-weight: bold;
+		}
+		li a {
+			display: block;
+			color: #333;
+		}
+		li a:hover {
+			text-decoration: none;
+		}
+		li span {
+			color: #666;
+			display: block;
+			font-size: 11px;
+		}
+		li small {
+			font-size: 11px;
+			color: #666;
+		}
+		li:hover {
+			background: #e8f3fe;
+		}
+	}	
+}
+.reaction-form {
+	overflow: hidden;
+	label, .field-nickname {
+		display: none;
+	}
+	.avatar {
+	    margin-right: 11px;
+		width: 35px;
+		height: 34px;
+		background-color: #ddd;
+		float: left;
+		border-radius: 3px;
+	}	
+	.avatar.empty {
+		span {
+		    margin: 5px;
+			position: relative;
+    		top: 1px;
+    		display: inline-block;
+    		font: normal normal normal 14px/1 FontAwesome;
+    		font-style: normal;
+    		font-weight: 400;
+    		line-height: 1;
+    		-webkit-font-smoothing: antialiased;
+    		font-size: 24px;    	
+		}
+		span::before {
+			padding-left: 3px;
+			content: "\f2c0";
+			color: #868e96;
+		}
+	}	
+	.large-text {
+		width: calc("85% - 45px");
+		float: left;
+	}
+	.actions {
+		width: 15%;
+		float: left;
+		text-align: right;
+	}
+	textarea {	    
+		height: 34px;
+		transition: height 0.5s;
+	}	
+	textarea:focus {
+		height: 120px;
+	}	
+}
+
+#cookies-message {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	padding: 15px;
+	background-color: rgba(0,0,0,0.8);
+	text-align: center;
+	color: #ffffff;	
+    transition: bottom 1s;
+   	-webkit-transition: bottom 1s;    
+    min-height: 90px;
+    z-index: 1;
+}
+
+#cookies-message.cookie-close {
+	bottom: -200px;	
+}

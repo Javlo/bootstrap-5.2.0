@@ -1,0 +1,212 @@
+// javlo specific scss
+@import 'functions.scss';
+@import 'font.scss';
+@import 'layout.scss';
+@import 'components.scss';
+@import 'page-reference.scss';
+@import 'responsive.scss';
+@import 'default.scss';
+@import 'messages.scss';
+@import 'navigation.scss';
+@import 'dynamic-components.scss';
+@import 'bootstrap_extension.scss';
+@import 'children_links.scss';
+@import 'header.scss';
+@import 'treeview.scss';
+@import 'parallax_images.scss';
+@import 'svg.scss';
+@import 'mutimedia.scss';
+@import 'pdf-multimedia.scss';
+@import 'vfs.scss';
+@import 'widget.scss';
+@import 'chat.scss';
+@import 'my-events.scss';
+@import 'box.scss';
+@import 'mirror.scss';
+@import 'sitemap.scss';
+@import 'agenda.scss';
+@import 'file-finder.scss';
+@import 'section.scss';
+@import 'survey.scss';
+@import 'login.scss';
+
+@import 'responsive/screen-lg.scss';
+@import 'responsive/screen-md.scss';
+@import 'responsive/screen-sm.scss';
+/* @import 'responsive/ratio.scss'; */
+
+@import 'integration.scss';
+@import 'integration_g2.scss';
+@import 'integration_g3.scss';
+
+@media print {
+	@import 'print.scss';
+}
+
+.colored-wrapper {
+	padding: $basic-bloc-separation;	
+}
+
+.header {
+	margin-top: $basic-bloc-separation;
+}
+
+.modal-full .thumbnails {
+	position: relative;
+}
+
+.modal-full {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0 none;	
+}
+
+.modal-full .modal-content {
+	background-color: #000000;
+	border-radius: 0;
+	border: 0 none;
+	padding-bottom: 10px;
+}
+
+.modal-full .modal-body {
+	background-color: transparent;
+}
+
+.modal-full .modal-header, .modal-full .caption {
+	width: 100%;	
+	opacity: 0;	
+	z-index: 5;
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.7);	
+}
+
+.modal-full .caption {
+	bottom: 0;
+	border-top: 1px #ffffff solid;
+}
+
+.btn-small {
+	display: none;
+}
+
+.modal-full .btn-small {
+	display: block;	
+}
+
+.btn-pause {
+	display: none;
+}
+
+.modal-play .btn-pause {
+	display: block;	
+}
+
+.modal-play .btn-play {
+	display: none;
+}
+
+.modal-full .btn-full {
+	display: none;
+}
+
+.modal-full .modal-header h3 {
+	color: #000000;	
+}
+
+.modal-full .modal-header:hover, .modal-full .caption:hover {
+	opacity: 1;
+}
+
+.modal-full .thumbnail {
+	border: 0 none;
+	margin: 0;
+	background-color: transparent;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.modal-full .thumbnail .vertical, .modal-full .thumbnail img {
+	display: inline-block;		
+	vertical-align: middle;	
+}
+
+
+.modal-full .thumbnail .vertical {
+	height: 100%;
+}
+
+.modal-full .modal-body {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+}
+
+.logo a, .nav a {
+	text-decoration: none;
+}
+
+.header {
+	.search {
+		.fa {
+			color: #ffffff;
+		}
+	}
+}
+
+.section-myspace #content .jcreator.title {
+	display: flex;
+	overflow: hidden;
+	padding: 0;
+	border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    background-color: #ffffff;
+	margin: 10px 0 5px 0;
+	width: 220px;
+	height: 60px;
+	.avatar {
+		width: 60px;
+		margin-right: 5px;
+		float: none;		
+		img {
+			height: 100%;
+		}	
+	}
+	.text {	
+		font-size: 11px;
+		padding: 3px;
+		margin: 0 auto;
+		.date, .username {
+			color: #333333 !important;
+		}
+	}
+}
+
+.jcreator {
+	float: right;
+}
+
+.reaction {
+	.avatar {
+		margin-bottom: 5px;
+	}
+	.user-data .avatar {
+		height: 50px;
+	}
+	.authors {
+		.fullname, .email {
+			float: right;
+		}
+			
+	}
+	.btn-delete {
+		float: right;
+	}
+	.btn {
+		margin-top: 0;
+	}
+	.text {
+		margin-bottom: 5px;
+	}
+}

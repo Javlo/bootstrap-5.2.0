@@ -1,0 +1,1 @@
+<img id="img-${compid}" data-compid="${compid}" src="${previewURL}" class="global-image ${filter} ${comp.style}" ${not empty imgCaption?imgCaption:''}alt="${imageAlt}"${imageStyle} ${imageWidth} />

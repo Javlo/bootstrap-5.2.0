@@ -1,0 +1,27 @@
+#contextzone, #sidebar {
+	.mirror-page {
+		font-size: 0.9em;
+		background-color: #efefef;
+		padding: 15px;
+		border: 1px #cccccc solid;
+	}
+	.mirror-page > h2:first-child, .mirror-page > h3:first-child {
+		background-color: #cccccc;
+		color: #ffffff;
+		margin: -15px -15px 15px -15px ;
+		padding: 5px;
+		text-align: center;
+	}
+	.smart-form {
+		margin-bottom: 0;
+		h2 {
+			font-size: 1.4em;
+		}
+		label {
+			display: none;
+		}
+		form > div:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
